@@ -8,21 +8,16 @@ const Product: React.FC<IPropsProducts> = ({product}) => {
 
   const toggleClass = (id: string, className: string): void => {
     document.getElementById(id)?.querySelector('svg')?.classList.toggle(className);
-    // console.log(document.getElementById(id)?.firstChild);
-    
-    // document.getElementById(id)?.classList.toggle(className);
 }
 
-  const setFavorite = () => {  
-    console.log(product.id);
-      
+  const setFavorite = () => {        
     toggleClass(`icon_${product.id}`, 'icon-active');
-    console.log("tesst");
   }
+  
     return (
         <ProductStyle>
             <ContainerImage>
-                {/* <Image src={icon} /> */}
+                <Image src={product.image} />
                 <ContainerIcon onClick={setFavorite} id={`icon_${product.id}`}>
                   <IconHeard  />
                 </ContainerIcon>

@@ -4,6 +4,7 @@ import {
 } from '../styles/pages/TestStyled';
 
 const Test = () => {
+
   return (
     <TestStyle>
       <TitlePage>Онлайн-подбор средств для лица</TitlePage>

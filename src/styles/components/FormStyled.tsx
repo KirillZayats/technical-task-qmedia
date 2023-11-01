@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import { device } from "../media/MediaQueryStyled";
 
 const FormStyle = styled.form`
@@ -33,15 +33,31 @@ const ContainerQuestions = styled.section`
   @media ${device.tablet} {
     min-height: 300px;
   }
+
+  .item-enter {
+  opacity: 0;
+}
+.item-enter-active {
+  opacity: 1;
+  transition: opacity 500ms ease-in;
+}
+.item-exit {
+  opacity: 1;
+}
+.item-exit-active {
+  opacity: 0;
+  transition: opacity 500ms ease-in;
+}
 `;
 
 const Question = styled.h3`
 font-size: 20px;
 font-weight: 700;
+/* transition: all .5s ease-out; */
 `;
 
 
-const NavQuestion = styled.nav`
+const NavQuestion = styled.div`
     display: flex;
     flex-direction: column;
     gap: 16px;
@@ -54,23 +70,19 @@ const ListQuestions = styled.ul`
     .active {
       background: ${({ theme }) => theme.colors.BUTTON_MAIN_COLOR};
     }
-    /* .no-active {
-    } */
 `;
 const ElementQuestion = styled.li`
     width: 20px;
     height: 20px;
     border-radius: 50%;
     background: ${({ theme }) => theme.colors.PANEL_COLOR};
-    transition: all .2s ease-out;
+    transition: all .5s ease-out;
 `;
 
 const PositionQuestion = styled.span`
 font-size: 15px;
 font-weight: 400;
 color: ${({ theme }) => theme.colors.TEXT_MARK_COLOR};
-transition: all .2s ease-out;
-
 `;
 
 const ContainerButtons = styled.div`
@@ -104,6 +116,7 @@ const CheckBox = styled.input`
   height: 15px;
   border: 1.5px solid ${({ theme }) => theme.colors.TEXT_MARK_COLOR};
   background: ${({ theme }) => theme.colors.BUTTON_SECOND_COLOR};
+  cursor: pointer;
 
   &:focus {
     background: ${({ theme }) => theme.colors.BUTTON_MAIN_COLOR};
@@ -115,6 +128,7 @@ const TextQuestion = styled.span`
 font-size: 15px;
 font-style: normal;
 font-weight: 400;
+cursor: pointer;
 `;
 
 export {

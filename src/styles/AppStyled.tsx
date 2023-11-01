@@ -54,7 +54,7 @@ font-weight: 700;
     cursor: pointer;
   }
 
-  span, path, a, p, img, svg {
+  span, path, a, p, img, svg, button {
     transition: All .3s ease-out;
   }
 
@@ -73,13 +73,25 @@ font-family: 'Inter', sans-serif;
 const BackButton = styled(ButtonStyle)`
     background: ${({ theme }) => theme.colors.BUTTON_SECOND_COLOR};
     color: ${({ theme }) => theme.colors.TEXT_COLOR};
+
+    &:hover {
+      background: ${({ theme }) => theme.colors.TEXT_MARK_PRICE_COLOR};
+color: ${({ theme }) => theme.colors.TEXT_SECOND_COLOR};
+    }
 `;
 
 const NextButton = styled(ButtonStyle)`
 background: ${({ theme }) => theme.colors.BUTTON_MAIN_COLOR};
 color: ${({ theme }) => theme.colors.TEXT_SECOND_COLOR};
+
+&:hover {
+  background: ${({ theme }) => theme.colors.PANEL_COLOR};
+    color: ${({ theme }) => theme.colors.TEXT_COLOR};
+}
 `;
 
+const ContainerProvider = styled.div``;
+
 export {
-  GlobalStyle, BackButton, NextButton
+  GlobalStyle, BackButton, NextButton, ContainerProvider
 }
