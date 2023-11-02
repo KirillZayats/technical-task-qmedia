@@ -5,7 +5,11 @@ export interface PropsTheme {
 export enum ETypeClick {
   NEXT = "NEXT",
   PAST = "PAST",
-  RESULT = "RESULT"
+  RESULT = "RESULT",
+}
+
+export type FieldValues = {
+  answer: string
 }
 
 export interface IPropsProducts {
@@ -27,10 +31,10 @@ export interface IQuestion {
 }
 
 export interface IPropsModal {
-  active: boolean,
-  setActive: (value: boolean) => void,
-  error: string,
-  setError: (value: string) => void
+  active: boolean;
+  setActive: (value: boolean) => void;
+  error: string;
+  setError: (value: string) => void;
 }
 
 export type Data = IQuestion | IProduct;

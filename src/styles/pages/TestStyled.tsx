@@ -15,9 +15,9 @@ const TestStyle = styled.main`
     margin: 30px 20px;
   }
 
-    @media ${device.mobileL} {
-      margin: 30px auto;
-      max-width: calc(${size.mobileL} - 40px);
+  @media ${device.mobileL} {
+    margin: 30px auto;
+    max-width: calc(${size.mobileL} - 40px);
   }
 
   @media ${device.tablet} {
@@ -40,10 +40,7 @@ const TestStyle = styled.main`
     max-width: 100%;
   }
 `;
-const TitlePage = styled.h2`
-
-
-`;
+const TitlePage = styled.h2``;
 const DescriptionText = styled.p`
   max-width: 583px;
   width: 100%;
@@ -56,8 +53,6 @@ const DescriptionText = styled.p`
   @media ${device.tablet} {
     font-size: 20px;
   }
-`
+`;
 
-export {
-    DescriptionText, TitlePage, TestStyle
-}
+export { DescriptionText, TitlePage, TestStyle };

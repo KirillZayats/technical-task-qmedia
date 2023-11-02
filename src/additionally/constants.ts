@@ -1,1 +1,2 @@
-export const BASE_URL = '';
+export const PATH_QUESTIONS = 'questions';
+export const PATH_PRODUCTS = 'products';

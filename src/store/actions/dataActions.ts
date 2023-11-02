@@ -4,8 +4,9 @@ import { initializeApp } from "firebase/app";
 import { Dispatch } from "redux";
 import { DataActionType } from "../types/types";
 import { Data } from "../../additionally/interfaces";
+import { PATH_PRODUCTS, PATH_QUESTIONS } from "../../additionally/constants";
 
-export const getProducts = (data: Data[]) => {  
+const getProducts = (data: Data[]) => {
   return {
     type: DataActionType.GET_PRODUCTS,
     isLoading: true,
@@ -13,16 +14,22 @@ export const getProducts = (data: Data[]) => {
   };
 };
 
-export const getQuestions = (data: Data[]) => {
+const getQuestions = (data: Data[]) => {
   return {
     type: DataActionType.GET_QUESTIONS,
     isLoading: true,
-    questions: data  
+    questions: data,
   };
 };
 
+export const setAnswers = (answers: string[]) => {
+  return {
+    type: DataActionType.SET_ANSWERS,
+    answers: answers,
+  };
+}
+
 export const getData = (path: string) => {
-  
   initializeApp(firebaseConfig);
   let data: Array<Array<Data>> = [];
 
@@ -37,17 +44,15 @@ export const getData = (path: string) => {
           console.log("No data available");
         }
       })
-      .then(() => {  
-              
+      .then(() => {
         switch (path) {
-          case 'products':
+          case PATH_PRODUCTS:
             dispatch(getProducts(data[0]));
             break;
-            case 'questions':
-              dispatch(getQuestions(data[0]));
-
+          case PATH_QUESTIONS:
+            dispatch(getQuestions(data[0]));
             break;
-         }
+        }
       })
       .catch((error) => {
         console.error(error);

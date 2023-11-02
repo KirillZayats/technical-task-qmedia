@@ -5,4 +5,4 @@ export const rootReducer = combineReducers({
   data: dataReducer,
 });
 
-export type RootState = ReturnType<typeof rootReducer>
+export type RootState = ReturnType<typeof rootReducer>;

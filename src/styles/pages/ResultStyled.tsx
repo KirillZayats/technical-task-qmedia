@@ -14,9 +14,9 @@ const ResultStyle = styled.main`
     margin: 30px 20px;
   }
 
-    @media ${device.mobileL} {
-      margin: 30px auto;
-      max-width: calc(${size.mobileL} - 40px);
+  @media ${device.mobileL} {
+    margin: 30px auto;
+    max-width: calc(${size.mobileL} - 40px);
   }
 
   @media ${device.tablet} {
@@ -60,12 +60,12 @@ const DescriptionText = styled.p`
 `;
 
 const ListProducts = styled.ul`
-display: flex;
-flex-direction: row;
-row-gap: 40px;
-flex-wrap: wrap;
+  display: flex;
+  flex-direction: row;
+  row-gap: 40px;
+  flex-wrap: wrap;
 
-@media ${device.mobileS} {
+  @media ${device.mobileS} {
     margin: 30px auto;
   }
 
@@ -97,16 +97,21 @@ const NavProducts = styled.nav`
 
   .active {
     color: ${({ theme }) => theme.colors.BUTTON_MAIN_COLOR};
-
   }
 `;
 
 const LinkPage = styled.span`
   font-size: 20px;
-font-weight: 400;
-color: ${({ theme }) => theme.colors.TEXT_MARK_PRICE_COLOR};
+  font-weight: 400;
+  color: ${({ theme }) => theme.colors.TEXT_MARK_PRICE_COLOR};
 `;
 
 export {
-    LinkPage, NavProducts, ElementListProduct, ListProducts, TitlePage, DescriptionText, ResultStyle
-}
+  LinkPage,
+  NavProducts,
+  ElementListProduct,
+  ListProducts,
+  TitlePage,
+  DescriptionText,
+  ResultStyle,
+};
